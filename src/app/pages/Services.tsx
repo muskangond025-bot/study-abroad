@@ -424,9 +424,9 @@ function TimingScenarioCard({ scenario, index }: { scenario: typeof timingScenar
 }
 
 const videoSources = [
-  { src: '/video1.mp4', label: 'Global Campus' },
-  { src: '/video.mp4', label: 'Student Life' },
-  { src: '/video2.mp4', label: 'Academic Journey' }
+  { src: '/study-abroad/video1.mp4', label: 'Global Campus' },
+  { src: '/study-abroad/video.mp4', label: 'Student Life' },
+  { src: '/study-abroad/video2.mp4', label: 'Academic Journey' }
 ];
 
 function CapabilitiesVideoPlayer() {

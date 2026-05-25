@@ -351,7 +351,7 @@ const guideSteps = [
     step: 'Step 01',
     title: 'Elite Academic Standings',
     desc: 'Investigate global university rankings, program specialities, faculty prestige, and research output to ensure high educational quality.',
-    videoSrc: '/video1.mp4',
+    videoSrc: '/study-abroad/video1.mp4',
     icon: Globe,
     tip: 'Tip: Prioritize departments with strong industry citations in your field.'
   },
@@ -359,7 +359,7 @@ const guideSteps = [
     step: 'Step 02',
     title: 'Comprehensive Budgeting',
     desc: 'Calculate total costs including tuition fees, living expenses, health insurance, and explore availability of fellowships or scholarships.',
-    videoSrc: '/video.mp4',
+    videoSrc: '/study-abroad/video.mp4',
     icon: BookOpen,
     tip: 'Tip: Consider Germany or Singapore for tuition-free or high-value options.'
   },
@@ -367,7 +367,7 @@ const guideSteps = [
     step: 'Step 03',
     title: 'Post-Graduation Career Paths',
     desc: 'Research post-study work visa rights, regional workforce demands, and permanent residency pathways for international graduates.',
-    videoSrc: '/video2.mp4',
+    videoSrc: '/study-abroad/video2.mp4',
     icon: Briefcase,
     tip: 'Tip: Canada and Australia offer generous post-graduate work rights.'
   },
@@ -375,7 +375,7 @@ const guideSteps = [
     step: 'Step 04',
     title: 'Safety & Cultural Harmony',
     desc: 'Evaluate safety indexes, cultural inclusion, climate comfort, and local campus support networks in your prospective destination.',
-    videoSrc: '/video.mp4',
+    videoSrc: '/study-abroad/video.mp4',
     icon: Shield,
     tip: 'Tip: Establish contact with local student groups during your research.'
   }
