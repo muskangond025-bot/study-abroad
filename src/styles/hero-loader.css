@@ -1,0 +1,403 @@
+/* Elite Pathways Hero Loader Animation Styles */
+
+.elite-hero {
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+/* Loading State */
+.elite-hero.is--loading {
+  height: 100vh;
+}
+
+.elite-hero.is--loading.is--hidden {
+  display: none;
+}
+
+/* Loader Overlay */
+.elite-loader {
+  color: #000000;
+  background-color: #F1DEA8;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+
+/* Main Heading Container */
+.elite__h1 {
+  white-space: nowrap;
+  justify-content: center;
+  font-size: 8rem;
+  font-weight: 500;
+  line-height: 0.75;
+  display: flex;
+  position: relative;
+  font-family: 'Lora', serif;
+  color: #462506;
+}
+
+/* Start Section (ELI) */
+.elite__h1-start {
+  justify-content: flex-end;
+  display: flex;
+  overflow: hidden;
+}
+
+/* End Section (TE PATHWAYS) */
+.elite__h1-end {
+  justify-content: flex-start;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Individual Letters */
+.elite__letter {
+  display: block;
+  position: relative;
+}
+
+/* Growing Box Container */
+.elite-loader__box {
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  display: flex;
+  position: relative;
+}
+
+.elite-loader__box-inner {
+  justify-content: center;
+  align-items: center;
+  min-width: 1em;
+  height: 95%;
+  display: flex;
+  position: relative;
+}
+
+/* Growing Image Container */
+.elite__growing-image {
+  justify-content: center;
+  align-items: center;
+  width: 0%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+}
+
+.elite__growing-image-wrap {
+  width: 100%;
+  min-width: 1em;
+  height: 100%;
+  position: absolute;
+}
+
+/* Cover Images */
+.elite__cover-image {
+  pointer-events: none;
+  object-fit: cover;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.elite__cover-image-extra {
+  pointer-events: none;
+  object-fit: cover;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.elite__cover-image-extra.is--1 {
+  z-index: 3;
+}
+
+.elite__cover-image-extra.is--2 {
+  z-index: 2;
+}
+
+.elite__cover-image-extra.is--3 {
+  z-index: 1;
+}
+
+/* Hero Content (appears after loading) */
+.elite-hero__content {
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 9rem 2rem 4rem 2rem; /* Accounts for 5rem fixed navbar to center content vertically in visible area */
+  display: flex;
+  position: relative;
+  z-index: 10;
+  opacity: 0;
+}
+
+.elite-hero__content.is--visible {
+  opacity: 1;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 991px) {
+  .elite__h1 {
+    font-size: 6rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .elite__h1 {
+    font-size: 3.5rem;
+  }
+  
+  .elite-hero__content {
+    padding: 7rem 1rem 2rem 1rem; /* Accounts for 5rem fixed navbar to center content vertically in visible area */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .elite__h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Premium Rotating Globe style to replace the letter 'o' / 'O' */
+.rotating-globe {
+  width: 0.82em;
+  height: 0.82em;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  box-shadow: inset -0.1em -0.1em 0.25em rgba(0,0,0,0.8), 
+              inset 0.05em 0.05em 0.15em rgba(255,255,255,0.6),
+              0 0 0.4em rgba(59, 130, 246, 0.7);
+  background: radial-gradient(circle at 35% 35%, #2563eb 0%, #172554 100%);
+  margin: 0 0.04em;
+  transform: translateY(0.06em); /* optical alignment slightly lower */
+}
+
+.rotating-globe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 50'><path d='M5,10 Q15,5 20,15 T15,30 T10,40 Q5,45 8,30 Z' fill='%2322c55e'/><path d='M45,8 Q60,5 75,12 T70,25 T60,35 Q50,42 45,35 Q40,25 45,8 Z' fill='%2322c55e'/><path d='M85,32 Q90,30 92,35 T85,40 Z' fill='%2322c55e'/></svg>");
+  background-size: 50% 100%;
+  background-repeat: repeat-x;
+  animation: rotate-globe 12s linear infinite;
+  opacity: 0.95;
+}
+
+@keyframes rotate-globe {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Premium 3D Text Styling with Gold Shimmer Glow Animation */
+.premium-3d-text {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  color: #ffffff;
+  animation: gold-shimmer 4s ease-in-out infinite;
+}
+
+@keyframes gold-shimmer {
+  0%, 100% {
+    text-shadow: 
+      0 1px 0 #e6c89a,
+      0 2px 0 #d4af75,
+      0 3px 0 #c29853,
+      0 4px 0 #b08235,
+      0 5px 0 #946922,
+      0 6px 1px rgba(0,0,0,0.2),
+      0 0 12px rgba(212, 175, 55, 0.4),
+      0 2px 4px rgba(0,0,0,0.4),
+      0 4px 8px rgba(0,0,0,0.3),
+      0 8px 16px rgba(0,0,0,0.35);
+  }
+  50% {
+    text-shadow: 
+      0 1px 0 #fff0d4,
+      0 2px 0 #f5d6a2,
+      0 3px 0 #e6c89a,
+      0 4px 0 #c29853,
+      0 5px 0 #b08235,
+      0 6px 1px rgba(0,0,0,0.2),
+      0 0 25px rgba(212, 175, 55, 0.8),
+      0 2px 4px rgba(0,0,0,0.4),
+      0 4px 8px rgba(0,0,0,0.3),
+      0 8px 16px rgba(0,0,0,0.35);
+  }
+}
+
+@media (max-width: 768px) {
+  .premium-3d-text {
+    animation: gold-shimmer-mobile 4s ease-in-out infinite;
+  }
+}
+
+@keyframes gold-shimmer-mobile {
+  0%, 100% {
+    text-shadow: 
+      0 1px 0 #e6c89a,
+      0 2px 0 #d4af75,
+      0 3px 0 #c29853,
+      0 4px 1px rgba(0,0,0,0.2),
+      0 0 10px rgba(212, 175, 55, 0.4),
+      0 2px 4px rgba(0,0,0,0.4),
+      0 6px 12px rgba(0,0,0,0.35);
+  }
+  50% {
+    text-shadow: 
+      0 1px 0 #fff0d4,
+      0 2px 0 #f5d6a2,
+      0 3px 0 #e6c89a,
+      0 4px 1px rgba(0,0,0,0.2),
+      0 0 20px rgba(212, 175, 55, 0.75),
+      0 2px 4px rgba(0,0,0,0.4),
+      0 6px 12px rgba(0,0,0,0.35);
+  }
+}
+
+/* Smoke effect classes */
+.smoke-letter {
+  display: inline-block;
+  transition: 
+    transform 3s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 3s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 3s cubic-bezier(0.16, 1, 0.3, 1),
+    text-shadow 3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center bottom;
+  will-change: transform, filter, opacity;
+}
+
+/* Drifting/Smoking state */
+.smoke-letter.is-smoking {
+  opacity: 0;
+  filter: blur(15px);
+  /* White-gray smoke cloud glowing shadow */
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(240, 240, 240, 0.4),
+    0 0 30px rgba(220, 220, 220, 0.2);
+}
+
+/* Staggered random directions for drifting smoke */
+.smoke-letter.is-smoking:nth-child(5n) {
+  transform: translate(25px, -80px) rotate(15deg) scale(1.6);
+}
+
+.smoke-letter.is-smoking:nth-child(5n+1) {
+  transform: translate(-30px, -95px) rotate(-20deg) scale(1.8);
+}
+
+.smoke-letter.is-smoking:nth-child(5n+2) {
+  transform: translate(45px, -70px) rotate(35deg) scale(2.0);
+}
+
+.smoke-letter.is-smoking:nth-child(5n+3) {
+  transform: translate(-40px, -110px) rotate(-30deg) scale(1.5);
+}
+
+.smoke-letter.is-smoking:nth-child(5n+4) {
+  transform: translate(10px, -125px) rotate(8deg) scale(1.4);
+}
+
+/* --- STAGE 2: Interactive Destination Dashboard --- */
+
+/* Rotating Map Continents inside 3D Globe */
+.rotating-map {
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'><path d='M10,35 Q20,20 28,30 T20,55 T15,70 Q10,75 12,55 Z M50,28 Q75,18 90,30 T85,55 T70,75 Q60,88 50,75 Q45,55 50,28 Z M120,65 Q130,55 135,70 Z M160,45 Q170,35 175,50 Z' fill='%23E9C579' opacity='0.3'/><path d='M110,35 Q125,25 135,40 Z M30,68 Q35,62 38,72 Z' fill='%239F6920' opacity='0.25'/></svg>");
+  background-size: 50% 100%;
+  background-repeat: repeat-x;
+  animation: rotate-globe 24s linear infinite;
+  will-change: transform;
+}
+
+@keyframes rotate-globe {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Pulsing connecting line dash signal animation */
+.connecting-line-dash {
+  animation: connection-flow 1.5s linear infinite;
+  stroke-dashoffset: 15;
+}
+
+@keyframes connection-flow {
+  to {
+    stroke-dashoffset: -15;
+  }
+}
+
+/* Premium Dashboard glassmorphic cards */
+.dashboard-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+/* Mobile responsive grid columns and sizing overrides */
+@media screen and (max-width: 1023px) {
+  .rotating-globe {
+    width: 0.78em;
+    height: 0.78em;
+  }
+  
+  .dashboard-card {
+    width: 240px;
+    padding: 1rem;
+  }
+  
+  /* Horizontal scroll flow for mobile country cards */
+  .relative.w-full.max-w-6xl.h-\[620px\] {
+    height: auto !important;
+    overflow-x: auto;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    padding: 1rem 0;
+    width: 100%;
+    scrollbar-width: none; /* Hide standard scrollbar */
+  }
+  
+  .relative.w-full.max-w-6xl.h-\[620px\]::-webkit-scrollbar {
+    display: none; /* Hide Chrome scrollbar */
+  }
+  
+  .dashboard-card.group {
+    flex-shrink: 0;
+  }
+}
+
+

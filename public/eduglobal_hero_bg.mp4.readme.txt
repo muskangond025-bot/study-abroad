@@ -1,0 +1,20 @@
+To animate your static hero background image into a loopable, 60fps high-quality video clip:
+
+1. Locate the custom-generated poster image:
+   Path: "src/assets/eduglobal_hero_bg.png"
+   This image has the precise lighting, color, student walk pose, and glass building architecture.
+
+2. Go to a free online AI Video Generator:
+   - Luma Dream Machine (https://lumalabs.ai/dream-machine)
+   - Runway Gen-3 Alpha (https://runwayml.com)
+   - Kling AI (https://klingai.com)
+   - Pika (https://pika.art)
+
+3. Upload the static image ("src/assets/eduglobal_hero_bg.png") as the source image and use the following generation prompt:
+   "Convert this static image into a high-quality video clip. The environment comes alive: leaves on the trees move gently in the wind, reflections on the glass building shift naturally, and the students in the background walk into the campus building. Maintain the original lighting, colors, and layout precisely. Loopable, 60fps."
+
+4. Generate and download the video file.
+
+5. Rename the downloaded video to "eduglobal_hero_bg.mp4" and place it in this folder ("public/").
+
+6. The website will automatically detect the local file and play your custom video with 3D parallax mouse-tilt animations enabled!

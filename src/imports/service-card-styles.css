@@ -1,0 +1,280 @@
+:root {
+	color-scheme: light dark;
+
+	/* keep this tighter + capped (matches the “small gap” feel) */
+	--svc-gap: clamp(12px, 1.2vw, 18px);
+	--svc-gap-max: 18px;
+
+	--svc-radius: 26px;
+	--svc-pad: clamp(18px, 2.2vw, 34px);
+
+	--svc-h: clamp(560px, 76vh, 760px);
+	--svc-top: clamp(14px, 2vh, 24px);
+	--svc-enter: calc(var(--svc-h) + clamp(120px, 18vh, 240px));
+
+	/* card surface tweaks */
+	--svc-card-odd: color-mix(in srgb, Canvas 92%, CanvasText 8%);
+	--svc-card-even: color-mix(in srgb, Canvas 88%, CanvasText 12%);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+		sans-serif;
+	background: Canvas;
+	color: CanvasText;
+}
+
+/* ===============================
+   COMPONENT
+================================= */
+
+.svc {
+	padding: clamp(22px, 3vw, 44px);
+
+	&__wrap {
+		/* cap overall width so columns stay “tight” */
+		//max-width: min(1120px, calc(100vw - (clamp(22px, 3vw, 44px) * 2)));
+		margin: 0 auto;
+		display: grid;
+
+		/* let columns shrink more before stacking to prevent overlap */
+		grid-template-columns:
+			minmax(360px, 1fr)
+			minmax(360px, 0.95fr);
+
+		column-gap: min(var(--svc-gap), var(--svc-gap-max));
+		row-gap: var(--svc-gap);
+		align-items: start;
+	}
+
+	/* stack BEFORE you can hit overlap territory */
+	@media (max-width: 860px) {
+		&__wrap {
+			max-width: 760px;
+			grid-template-columns: 1fr;
+			row-gap: clamp(18px, 3vw, 28px);
+		}
+
+		/* once stacked: keep both blocks same width + centered, and avoid sticky weirdness */
+		&__media,
+		&__stage {
+			position: relative;
+			top: auto;
+		}
+
+		&__right {
+			/* ensure right side doesn’t “drift” wider/narrower than media when stacked */
+			width: 100%;
+		}
+	}
+
+	/* ===============================
+	   LEFT MEDIA
+	================================= */
+
+	&__media {
+		position: sticky;
+		top: var(--svc-top);
+		height: var(--svc-h);
+	}
+
+	&__mediaInner {
+		height: 100%;
+		border-radius: var(--svc-radius);
+		overflow: hidden;
+		position: relative;
+		background: CanvasText;
+	}
+
+	&__images {
+		position: absolute;
+		inset: 0;
+	}
+
+	&__img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0;
+		transform: scale(1.03);
+		transition: opacity 180ms linear;
+
+		&.is-active {
+			opacity: 1;
+		}
+	}
+
+	/* Always light text over image (both schemes) */
+	&__mediaOverlay {
+		position: absolute;
+		inset: 0;
+		padding: var(--svc-pad);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		color: #fff;
+		pointer-events: none;
+	}
+
+	&__kicker {
+		margin: 0;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		line-height: 0.92;
+		font-size: clamp(56px, 6.6vw, 92px);
+	}
+
+	&__progress {
+		position: absolute;
+		left: var(--svc-pad);
+		right: var(--svc-pad);
+		bottom: calc(var(--svc-pad) * 0.65);
+		pointer-events: none;
+	}
+
+	&__progressTrack {
+		height: 3px;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.28);
+		overflow: hidden;
+	}
+
+	&__progressFill {
+		height: 100%;
+		transform: scaleX(0);
+		transform-origin: 0 50%;
+		background: rgba(255, 255, 255, 0.85);
+	}
+
+	/* ===============================
+	   RIGHT SIDE
+	================================= */
+
+	&__right {
+		position: relative;
+	}
+
+	&__stage {
+		position: sticky;
+		top: var(--svc-top);
+		height: var(--svc-h);
+		border-radius: var(--svc-radius);
+	}
+
+	/* ===============================
+	   CARDS
+	================================= */
+
+	&__card {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		padding: clamp(22px, 2.6vw, 44px);
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center; /* center the content block vertically */
+		align-items: center;
+		text-align: left;
+		gap: clamp(16px, 2vw, 28px);
+
+		transform: translate(-50%, -50%) translate3d(0, var(--card-y, 0px), 0)
+			scale(var(--card-s, 1));
+		transform-origin: 50% 65%;
+		will-change: transform;
+		border-radius: var(--svc-radius);
+
+		/* default (dark scheme or system Canvas) */
+		background: var(--svc-card-odd);
+		color: CanvasText;
+
+		/* odd/even surface variation */
+		&:nth-child(even) {
+			background: var(--svc-card-even);
+		}
+
+		/* if user is in LIGHT scheme, flip to light surfaces + dark text */
+		@media (prefers-color-scheme: light) {
+			background: color-mix(in srgb, Canvas 96%, CanvasText 4%);
+			color: CanvasText;
+
+			&:nth-child(even) {
+				background: color-mix(in srgb, Canvas 92%, CanvasText 8%);
+			}
+		}
+	}
+
+	&__num {
+		font-weight: 900;
+		letter-spacing: -0.04em;
+		font-size: clamp(84px, 7vw, 120px);
+		line-height: 1;
+	}
+
+	&__cardText {
+		max-width: 420px;
+
+		h3 {
+			margin: 0 0 12px;
+			font-weight: 800;
+			letter-spacing: -0.02em;
+			line-height: 1.05;
+			font-size: clamp(22px, 2.3vw, 34px);
+			text-transform: uppercase;
+		}
+
+		p {
+			margin: 0;
+			font-size: 15px;
+			opacity: 0.85;
+		}
+	}
+
+	/* Bottom centered plus */
+	&__plus {
+		position: absolute;
+		bottom: clamp(28px, 4vh, 44px);
+		left: 50%;
+		transform: translateX(-50%);
+
+		width: 56px;
+		height: 56px;
+		border-radius: 14px;
+
+		border: 1px solid currentColor;
+		background: transparent;
+		color: currentColor;
+
+		font-size: 22px;
+		font-weight: 700;
+		cursor: pointer;
+
+		transition: background 120ms ease, color 120ms ease;
+
+		&:hover {
+			background: currentColor;
+			color: Canvas;
+		}
+	}
+
+	/* Scroll runway */
+	&__triggers {
+		position: relative;
+	}
+	&__trigger {
+		height: 100vh;
+	}
+}

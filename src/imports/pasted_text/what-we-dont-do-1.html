@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>What We Don't Do</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:#f5f5f5;
+}
+
+/* SECTION */
+.section{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.header h2{
+  font-size:36px;
+  font-weight:600;
+}
+
+.header button{
+  border:1px solid #ddd;
+  background:#fff;
+  padding:8px 16px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns: 1.2fr 1.6fr 1.2fr;
+  gap:20px;
+}
+
+/* LEFT CARD */
+.left-card{
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  background:#eee;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:20px;
+}
+
+.left-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+}
+
+.left-card .content{
+  position:relative;
+  color:#fff;
+}
+
+.left-card h4{
+  margin:0;
+}
+
+.left-card p{
+  font-size:12px;
+  opacity:0.8;
+}
+
+.price{
+  margin-top:10px;
+  font-weight:600;
+}
+
+/* CENTER */
+.center{
+  display:grid;
+  grid-template-rows: 1fr auto;
+  gap:20px;
+}
+
+/* CENTER TOP */
+.center-top{
+  border-radius:20px;
+  background:#ddd;
+  padding:20px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+}
+
+.center-top h4{
+  margin:0;
+}
+
+.center-top p{
+  font-size:12px;
+  color:#666;
+}
+
+/* CENTER BOTTOM */
+.center-bottom{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.small-card{
+  background:#fff;
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.small-card h5{
+  margin:0;
+  font-size:14px;
+}
+
+.small-card p{
+  font-size:12px;
+  color:#666;
+  margin:5px 0;
+}
+
+.small-card .price{
+  font-size:12px;
+}
+
+/* RIGHT CARD */
+.right-card{
+  border-radius:20px;
+  background:#eee;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="section">
+
+<div class="header">
+  <h2>What We Don't Do</h2>
+  <button>View All</button>
+</div>
+
+<div class="grid">
+
+  <!-- LEFT -->
+  <div class="left-card">
+    <div class="content">
+      <h4>No False Promises</h4>
+      <p>We never guarantee admissions</p>
+      <div class="price">Integrity First</div>
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="center">
+
+    <div class="center-top">
+      <div>
+        <h4>We Don’t Cut Corners</h4>
+        <p>Transparency and integrity come first</p>
+      </div>
+      <strong>Our Policy</strong>
+    </div>
+
+    <div class="center-bottom">
+
+      <div class="small-card">
+        <h5>No Essay Writing</h5>
+        <p>Students must apply themselves</p>
+        <div class="price">Ethical Practice</div>
+      </div>
+
+      <div class="small-card">
+        <h5>No Commission Bias</h5>
+        <p>We don’t recommend for profit</p>
+        <div class="price">Student First</div>
+      </div>
+
+      <div class="small-card">
+        <h5>No Rushed Decisions</h5>
+        <p>We guide with proper consultation</p>
+        <div class="price">Thoughtful Guidance</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right-card">
+    <h4>No Hidden Charges</h4>
+    <p>Clear and honest pricing always</p>
+    <div class="price">Full Transparency</div>
+  </div>
+
+</div>
+
+</section>
+
+</body>
+</html>
