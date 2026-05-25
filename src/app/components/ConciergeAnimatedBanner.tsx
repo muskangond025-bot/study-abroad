@@ -74,10 +74,7 @@ export function ConciergeAnimatedBanner() {
           style={{ fontFamily: 'Lora, serif' }}
         >
           Concierge-Style <br />
-          <span 
-            className="text-transparent bg-clip-text bg-gradient-to-r from-[#FAF8F5] via-[#EEDCB5] to-[#D4A755]"
-            style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
-          >
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FAF8F5] via-[#EEDCB5] to-[#D4A755]">
             Guidance
           </span>{' '}
           for Global Planning

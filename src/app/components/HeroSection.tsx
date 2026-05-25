@@ -223,7 +223,7 @@ export function HeroSection() {
                       className="elite__cover-image"
                       style={{ objectFit: 'cover', width: '100%', height: '100%' }}
                     >
-                      <source src="/study-abroad/video2.mp4" type="video/mp4" />
+                      <source src="/video2.mp4" type="video/mp4" />
                       <source src="https://assets.mixkit.co/videos/preview/mixkit-students-walking-in-a-university-campus-45357-large.mp4" type="video/mp4" />
                     </video>
                   </div>
@@ -269,7 +269,7 @@ export function HeroSection() {
                 className="absolute inset-0 w-full h-full object-cover scale-110"
                 style={{ filter: 'saturate(0.95)' }}
               >
-                <source src="/study-abroad/video2.mp4" type="video/mp4" />
+                <source src="/video2.mp4" type="video/mp4" />
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-students-walking-in-a-university-campus-45357-large.mp4" type="video/mp4" />
               </video>
             </motion.div>

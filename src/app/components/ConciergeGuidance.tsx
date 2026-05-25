@@ -273,10 +273,7 @@ export function ConciergeGuidance() {
               style={{ fontFamily: 'Lora, serif' }}
             >
               Ready for structured <br />
-              <span 
-                className="text-transparent bg-clip-text bg-gradient-to-r from-[#FAF8F5] via-[#EEDCB5] to-[#D4A755]"
-                style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
-              >
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FAF8F5] via-[#EEDCB5] to-[#D4A755]">
                 guidance?
               </span>
             </h2>

@@ -1,3 +1,4 @@
+// Deploy trigger: force rebuild for active GitHub Actions deployment
 import { defineConfig } from 'vite'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'

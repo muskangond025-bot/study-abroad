@@ -354,10 +354,7 @@ export function FinalCTA() {
               style={{ fontFamily: 'Lora, serif', transform: 'translateZ(20px)' }}
             >
               Ready to Begin <br />
-              <span 
-                className="text-transparent bg-clip-text bg-gradient-to-r from-[#9F6920] via-[#D4A755] to-[#9F6920] bg-[size:200%_auto] hover:animate-pulse"
-                style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
-              >
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9F6920] via-[#D4A755] to-[#9F6920] bg-[size:200%_auto] hover:animate-pulse">
                 Your Journey?
               </span>
             </motion.h2>

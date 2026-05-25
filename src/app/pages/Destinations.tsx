@@ -351,7 +351,7 @@ const guideSteps = [
     step: 'Step 01',
     title: 'Elite Academic Standings',
     desc: 'Investigate global university rankings, program specialities, faculty prestige, and research output to ensure high educational quality.',
-    videoSrc: '/study-abroad/video1.mp4',
+    videoSrc: '/video1.mp4',
     icon: Globe,
     tip: 'Tip: Prioritize departments with strong industry citations in your field.'
   },
@@ -359,7 +359,7 @@ const guideSteps = [
     step: 'Step 02',
     title: 'Comprehensive Budgeting',
     desc: 'Calculate total costs including tuition fees, living expenses, health insurance, and explore availability of fellowships or scholarships.',
-    videoSrc: '/study-abroad/video.mp4',
+    videoSrc: '/video.mp4',
     icon: BookOpen,
     tip: 'Tip: Consider Germany or Singapore for tuition-free or high-value options.'
   },
@@ -367,7 +367,7 @@ const guideSteps = [
     step: 'Step 03',
     title: 'Post-Graduation Career Paths',
     desc: 'Research post-study work visa rights, regional workforce demands, and permanent residency pathways for international graduates.',
-    videoSrc: '/study-abroad/video2.mp4',
+    videoSrc: '/video2.mp4',
     icon: Briefcase,
     tip: 'Tip: Canada and Australia offer generous post-graduate work rights.'
   },
@@ -375,7 +375,7 @@ const guideSteps = [
     step: 'Step 04',
     title: 'Safety & Cultural Harmony',
     desc: 'Evaluate safety indexes, cultural inclusion, climate comfort, and local campus support networks in your prospective destination.',
-    videoSrc: '/study-abroad/video.mp4',
+    videoSrc: '/video.mp4',
     icon: Shield,
     tip: 'Tip: Establish contact with local student groups during your research.'
   }
@@ -1385,7 +1385,7 @@ function DestinationBookCard({
           {/* Large Decorative Number */}
           <div 
             className="absolute top-6 left-6 text-[52px] md:text-[64px] leading-none font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-white/35 to-white/0 select-none z-20"
-            style={{ fontFamily: 'Lora, serif', fontWeight: 900, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+            style={{ fontFamily: 'Lora, serif', fontWeight: 900 }}
           >
             {String(index + 1).padStart(2, '0')}
           </div>
