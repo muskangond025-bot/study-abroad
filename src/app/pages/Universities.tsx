@@ -870,7 +870,7 @@ export function Universities() {
 
             <h2 
               className="text-4xl md:text-5xl mb-4 font-normal bg-gradient-to-r from-[#462506] via-[#9F6920] to-[#D4A755] bg-clip-text text-transparent inline-block tracking-wide" 
-              style={{ fontFamily: 'Lora, serif' }}
+              style={{ fontFamily: 'Lora, serif', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
             >
               Tips for University Research
             </h2>

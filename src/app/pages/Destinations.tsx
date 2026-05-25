@@ -1385,7 +1385,7 @@ function DestinationBookCard({
           {/* Large Decorative Number */}
           <div 
             className="absolute top-6 left-6 text-[52px] md:text-[64px] leading-none font-serif font-black text-transparent bg-clip-text bg-gradient-to-b from-white/35 to-white/0 select-none z-20"
-            style={{ fontFamily: 'Lora, serif', fontWeight: 900 }}
+            style={{ fontFamily: 'Lora, serif', fontWeight: 900, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
           >
             {String(index + 1).padStart(2, '0')}
           </div>

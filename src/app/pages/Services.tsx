@@ -1188,7 +1188,7 @@ export default function Services() {
                   {/* Large Number */}
                   <div 
                     className="text-[120px] lg:text-[180px] leading-none tracking-tight font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-[#D4A755]/20 to-[#9F6920]/0 mb-4 select-none" 
-                    style={{ fontFamily: 'Lora, serif' }}
+                    style={{ fontFamily: 'Lora, serif', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
                   >
                     {String(index + 1).padStart(2, '0')}
                   </div>

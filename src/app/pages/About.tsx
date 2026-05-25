@@ -1662,7 +1662,10 @@ function AboutHeroImage() {
                 }}
                 className="group/stat flex flex-col justify-center items-center py-2 px-1 lg:py-2.5 lg:px-2 bg-white/70 border border-white/80 rounded-2xl shadow-[0_8px_20px_rgba(159,105,32,0.06)] backdrop-blur-md transition-all duration-300 hover:bg-white/95 hover:border-[#D4A755]/50 hover:shadow-[0_12px_24px_rgba(212,167,85,0.18)] hover:-translate-y-1 text-center cursor-default"
               >
-                <span className="text-base md:text-lg lg:text-xl font-bold bg-gradient-to-r from-[#9F6920] to-[#603E0E] bg-clip-text text-transparent group-hover/stat:scale-105 transition-transform duration-300">
+                <span 
+                  className="text-base md:text-lg lg:text-xl font-bold bg-gradient-to-r from-[#9F6920] to-[#603E0E] bg-clip-text text-transparent group-hover/stat:scale-105 transition-transform duration-300"
+                  style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+                >
                   {stat.value}
                 </span>
                 <span className="text-[8px] lg:text-[9px] uppercase tracking-wider text-[#462506]/75 mt-0.5 leading-tight font-medium" style={{ fontFamily: 'Source Sans 3, sans-serif' }}>
@@ -1737,7 +1740,10 @@ export function About() {
                 transition={{ duration: 0.6 }}
                 className="inline-block mb-4 px-6 py-2 bg-gradient-to-r from-amber-100/60 to-[#F1DEA8]/45 border border-[#D4A755]/30 rounded-full shadow-[0_4px_12px_rgba(212,167,85,0.08)]"
               >
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] bg-gradient-to-r from-[#9F6920] to-[#603E0E] bg-clip-text text-transparent" style={{ fontFamily: 'Source Sans 3, sans-serif' }}>
+                <span 
+                  className="text-xs font-semibold uppercase tracking-[0.2em] bg-gradient-to-r from-[#9F6920] to-[#603E0E] bg-clip-text text-transparent" 
+                  style={{ fontFamily: 'Source Sans 3, sans-serif', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+                >
                   About EduGlobal
                 </span>
               </motion.div>
@@ -1748,7 +1754,7 @@ export function About() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
                 className="text-4xl md:text-6xl mb-6 font-normal tracking-tight bg-gradient-to-r from-[#462506] via-[#7D4F1E] to-[#9F6920] bg-clip-text text-transparent"
-                style={{ fontFamily: 'Lora, serif' }}
+                style={{ fontFamily: 'Lora, serif', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
               >
                 Our Story
               </motion.h2>
